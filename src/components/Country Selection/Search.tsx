@@ -17,14 +17,14 @@ const Container = styled.div`
 
 const Input = styled.input`
   border-radius: 0.6rem;
-  box-shadow: var(--shadow);
+  box-shadow: ${({ theme }) => theme.shadow};
   height: 6rem;
   width: 100%;
   overflow: hidden;
   padding-left: 9.25rem;
   border: none;
   font-size: 1.55rem;
-  background: var(--bg-primary);
+  background: ${({ theme }) => theme.bgPrimary};
 
   &::-webkit-search-cancel-button {
     -webkit-appearance: none;

@@ -12,8 +12,8 @@ const Selected = styled.button`
   border-radius: 0.6rem;
   padding: 0 2rem 0 3rem;
   font-size: 1.5rem;
-  background: var(--bg-primary);
-  box-shadow: var(--shadow);
+  background: ${({ theme }) => theme.bgPrimary};
+  box-shadow: ${({ theme }) => theme.shadow};
   cursor: pointer;
 
   @media ${breakpoints.desktop} {
@@ -31,7 +31,7 @@ type SvgProps = {
 
 const Svg = styled.svg<SvgProps>`
   height: 2rem;
-  fill: var(--text);
+  fill: ${({ theme }) => theme.text};
 
   transform: ${({ $reversed }) => ($reversed ? 'rotate(0)' : 'rotate(180deg)')};
 
@@ -46,8 +46,8 @@ const OptionsContainer = styled.div`
   padding: 1.4rem 0;
   margin-top: 0.5rem;
   border-radius: 0.6rem;
-  background: var(--bg-primary);
-  box-shadow: var(--shadow);
+  background: ${({ theme }) => theme.bgPrimary};
+  box-shadow: ${({ theme }) => theme.shadow};
   z-index: 99;
 
   @media ${breakpoints.desktop} {

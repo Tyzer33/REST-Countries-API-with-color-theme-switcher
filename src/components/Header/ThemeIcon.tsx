@@ -1,26 +1,24 @@
-import styled from 'styled-components'
+import styled, { useTheme } from 'styled-components'
 import { breakpoints } from '../../styles/variables'
 
 const Svg = styled.svg`
   height: 3.5rem;
-  fill: var(--text);
+  fill: ${({ theme }) => theme.text};
 
   @media ${breakpoints.desktop} {
     height: 2rem;
   }
 `
 
-type Props = {
-  darkTheme: boolean
-}
+function ThemeIcon() {
+  const { iconFilled } = useTheme()
 
-function ThemeIcon({ darkTheme }: Props) {
-  return darkTheme ? (
-    <Svg id="icon-moon" viewBox="0 0 32 32">
+  return iconFilled ? (
+    <Svg viewBox="0 0 32 32">
       <path d="M15.505 16.496c-1.97-1.971-2.499-4.819-1.626-7.284-0.953 0.337-1.854 0.865-2.616 1.626-2.734 2.734-2.734 7.167 0 9.9 2.733 2.733 7.164 2.735 9.898 0 0.764-0.762 1.29-1.663 1.626-2.616-2.463 0.872-5.312 0.344-7.283-1.626z" />
     </Svg>
   ) : (
-    <Svg id="icon-moon1" viewBox="0 0 32 32">
+    <Svg viewBox="0 0 32 32">
       <path d="M21.866 21.447c-3.117 3.12-8.193 3.12-11.313 0s-3.12-8.195 0-11.314c0.826-0.824 1.832-1.453 2.989-1.863 0.365-0.128 0.768-0.035 1.039 0.237 0.274 0.273 0.366 0.677 0.237 1.039-0.784 2.211-0.25 4.604 1.391 6.245 1.638 1.639 4.031 2.172 6.245 1.391 0.362-0.129 0.767-0.036 1.039 0.237 0.273 0.271 0.365 0.676 0.236 1.039-0.408 1.157-1.038 2.164-1.863 2.989zM11.967 11.547c-2.34 2.34-2.34 6.147 0 8.486 2.5 2.501 6.758 2.276 8.937-0.51-2.247 0.141-4.461-0.671-6.109-2.318s-2.458-3.861-2.318-6.108c-0.18 0.141-0.35 0.29-0.51 0.451z" />
     </Svg>
   )

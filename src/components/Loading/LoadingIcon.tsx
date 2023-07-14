@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 const Svg = styled.svg`
   width: 4rem;
-  fill: var(--text);
+  fill: ${({ theme }) => theme.text};
   animation: rotate 2s linear infinite;
 `
 

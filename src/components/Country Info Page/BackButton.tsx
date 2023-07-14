@@ -9,10 +9,8 @@ const Button = styled.button`
   margin-bottom: 8rem;
   border-radius: 0.3rem;
   font-size: 1.75rem;
-  background: var(--bg-primary);
-  box-shadow: var(--header-shadow);
-  border: none;
-  cursor: pointer;
+  background: ${({ theme }) => theme.bgPrimary};
+  box-shadow: ${({ theme }) => theme.headerShadow};
 
   &:hover {
     transform: scale(0.95);
@@ -33,7 +31,7 @@ const Button = styled.button`
 
 const Svg = styled.svg`
   width: 1.75rem;
-  fill: var(--text);
+  fill: ${({ theme }) => theme.text};
   margin-right: 1.15rem;
 
   @media ${breakpoints.desktop} {

@@ -8,6 +8,7 @@ const GlobalStyle = createGlobalStyle`
       --bg-secondary: hsl(0, 0%, 98%);
       --text: hsl(200, 15%, 8%);
       --input-color: hsl(0, 0%, 52%);
+
       --flags-placeholder: hsla(0, 0%, 0%, 0.125);
 
       --header-shadow: 0 0 0.2rem 0.2rem hsla(0, 0%, 0%, 0.08);
@@ -20,12 +21,12 @@ const GlobalStyle = createGlobalStyle`
     list-style: none;
     box-sizing: border-box;
     font-family: 'Nunito Sans', sans-serif;
-    color: var(--text);
+    color: ${({ theme }) => theme.text};
   }
 
 
   body {
-    background: var(--bg-secondary);
+    background: ${({ theme }) => theme.bgSecondary};
 
 
     /* custom scrollbar */
@@ -33,7 +34,7 @@ const GlobalStyle = createGlobalStyle`
       width: 0.8vw;
 
       &-thumb {
-        background: var(--input-color);
+        background: ${({ theme }) => theme.inputColor};
         border-radius: 1rem;
         cursor: pointer;
       }
@@ -51,12 +52,13 @@ const GlobalStyle = createGlobalStyle`
   /* handle custom scrollbar for firefox */
   html {
     scrollbar-width: initial;
-    scrollbar-color: var(--input-color) hsla(0, 0%, 35%, 0.2);
+    scrollbar-color: ${({ theme }) => theme.inputColor} hsla(0, 0%, 35%, 0.2);
   }
 
   button {
     border: none;
     background: none;
+    cursor: pointer;
   }
 
   strong {

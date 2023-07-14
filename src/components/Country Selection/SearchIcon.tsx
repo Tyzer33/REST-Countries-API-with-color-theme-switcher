@@ -5,7 +5,7 @@ const Svg = styled.svg`
   position: absolute;
   height: 2rem;
   margin: 0 4rem;
-  fill: var(--input-color);
+  fill: ${({ theme }) => theme.inputColor};
   pointer-events: none;
 
   @media ${breakpoints.desktop} {

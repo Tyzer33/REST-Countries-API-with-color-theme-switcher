@@ -6,11 +6,11 @@ import { flex } from '../../styles/mixins'
 
 const Container = styled.div`
   ${flex(null, null, 'column')}
-  background: var(--bg-primary);
+  background: ${({ theme }) => theme.bgPrimary};
   height: 42rem;
   width: 33rem;
   border-radius: 0.6rem;
-  box-shadow: var(--shadow);
+  box-shadow: ${({ theme }) => theme.shadow};
   overflow: hidden;
   text-decoration: none;
   cursor: pointer;
@@ -28,7 +28,7 @@ const Container = styled.div`
 
 const FlagContainer = styled.div`
   min-height: 20rem;
-  background: var(--flags-placeholder);
+  background: ${({ theme }) => theme.flagsPlaceholder};
 
   @media ${breakpoints.desktop} {
     min-height: 10rem;

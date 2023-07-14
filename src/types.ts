@@ -1,3 +1,5 @@
+import { baseTheme } from './styles/themes'
+
 export type Country = {
   flags: CountryFlags
   name: CountryName
@@ -61,6 +63,12 @@ export type SelectedRegion = string
 export type SelectedRegionContextValue = {
   selectedRegion: SelectedRegion
   updateSelectedRegion: React.Dispatch<React.SetStateAction<SelectedRegion>>
+}
+
+export type Theme = typeof baseTheme
+
+export type CustomThemeContextValue = {
+  switchTheme(): void
 }
 
 export type StringObject = { [key: string]: string }

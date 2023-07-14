@@ -6,18 +6,21 @@ import { DataProvider } from './context/DataContext'
 import CountrySelection from './components/Country Selection/CountrySelection'
 import CountryInfoPage from './components/Country Info Page/CountryInfoPage'
 import GlobalStyle from './styles/globalStyles'
+import { CustomThemeProvider } from './context/CustomThemeContext'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <GlobalStyle />
-    <BrowserRouter>
-      <Header />
-      <DataProvider>
-        <Routes>
-          <Route path="/" element={<CountrySelection />} />
-          <Route path="/:country" element={<CountryInfoPage />} />
-        </Routes>
-      </DataProvider>
-    </BrowserRouter>
+    <CustomThemeProvider>
+      <GlobalStyle />
+      <BrowserRouter>
+        <Header />
+        <DataProvider>
+          <Routes>
+            <Route path="/" element={<CountrySelection />} />
+            <Route path="/:country" element={<CountryInfoPage />} />
+          </Routes>
+        </DataProvider>
+      </BrowserRouter>
+    </CustomThemeProvider>
   </React.StrictMode>
 )

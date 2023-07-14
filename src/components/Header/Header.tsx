@@ -6,8 +6,8 @@ import { breakpoints } from '../../styles/variables'
 
 const StyledHeader = styled.header`
   ${flex('space-between', 'center')}
-  background-color: var(--bg-primary);
-  box-shadow: var(--header-shadow);
+  background-color: ${({ theme }) => theme.bgPrimary};
+  box-shadow: ${({ theme }) => theme.headerShadow};
   padding: 0 2rem;
   height: 10rem;
 

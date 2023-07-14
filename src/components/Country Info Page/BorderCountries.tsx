@@ -33,15 +33,15 @@ const ListContainer = styled.div`
   }
 `
 
-const ListItem = styled.div`
+const ListItem = styled.button`
   ${flex()}
-  background: var(--bg-primary);
+  background: ${({ theme }) => theme.bgPrimary};
   height: 3.5rem;
   min-width: 12rem;
   font-size: 1.4rem;
   border-radius: 0.25rem;
   padding: 0 1.25rem;
-  box-shadow: var(--shadow);
+  box-shadow: ${({ theme }) => theme.shadow};
   cursor: pointer;
 
   &:hover {
