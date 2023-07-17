@@ -21,16 +21,16 @@ export function DataProvider({ children }: Props) {
     fetch(
       'https://restcountries.com/v3.1/all?fields=name,population,region,subregion,capital,tld,currencies,languages,borders,flags,cca3'
     )
-      .then((res) => {
-        if (res.ok) {
-          return res.json()
+      .then((r) => {
+        if (r.ok) {
+          return r.json()
         }
-        throw new Error(`Request failed with status ${res.status}`)
+        throw new Error(`Request failed with status ${r.status}`)
       })
       .then((json) => {
         setData(json.sort((a: Country, b: Country) => a.name.common.localeCompare(b.name.common)))
       })
-      .catch((err) => setIsError(err))
+      .catch(setIsError)
       .finally(() => setIsLoading(false))
   }, [])
 
