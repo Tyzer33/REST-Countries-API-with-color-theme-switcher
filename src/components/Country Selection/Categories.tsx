@@ -87,7 +87,7 @@ function Categories() {
     updateDisplayCategories(!displayCategories)
   }
 
-  function handleSelection(e: React.MouseEvent<HTMLButtonElement>) {
+  const handleSelection = (e: React.MouseEvent<HTMLButtonElement>) => {
     if (!(e.target instanceof HTMLButtonElement) || e.target.textContent === null) return
     updateSelectedRegion(e.target.textContent)
     openClose()
@@ -104,11 +104,11 @@ function Categories() {
       updateDisplayCategories(false)
     }
 
-    document.addEventListener('mousedown', (e) => clickOutside(e))
+    document.addEventListener('mousedown', clickOutside)
 
     // clean up function before running new effect
     return () => {
-      document.removeEventListener('mousedown', (e) => clickOutside(e))
+      document.removeEventListener('mousedown', clickOutside)
     }
   }, [displayCategories])
 
@@ -122,40 +122,22 @@ function Categories() {
       </Selected>
       {displayCategories && (
         <OptionsContainer ref={options}>
-          <Option
-            type="button"
-            onClick={(e: React.MouseEvent<HTMLButtonElement>) => handleSelection(e)}
-          >
+          <Option type="button" onClick={handleSelection}>
             Africa
           </Option>
-          <Option
-            type="button"
-            onClick={(e: React.MouseEvent<HTMLButtonElement>) => handleSelection(e)}
-          >
+          <Option type="button" onClick={handleSelection}>
             Americas
           </Option>
-          <Option
-            type="button"
-            onClick={(e: React.MouseEvent<HTMLButtonElement>) => handleSelection(e)}
-          >
+          <Option type="button" onClick={handleSelection}>
             Asia
           </Option>
-          <Option
-            type="button"
-            onClick={(e: React.MouseEvent<HTMLButtonElement>) => handleSelection(e)}
-          >
+          <Option type="button" onClick={handleSelection}>
             Europe
           </Option>
-          <Option
-            type="button"
-            onClick={(e: React.MouseEvent<HTMLButtonElement>) => handleSelection(e)}
-          >
+          <Option type="button" onClick={handleSelection}>
             Oceania
           </Option>
-          <Option
-            type="button"
-            onClick={(e: React.MouseEvent<HTMLButtonElement>) => handleSelection(e)}
-          >
+          <Option type="button" onClick={handleSelection}>
             All
           </Option>
         </OptionsContainer>

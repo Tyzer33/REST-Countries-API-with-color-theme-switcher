@@ -11,7 +11,6 @@ const Button = styled.button`
   font-size: 1.5rem;
   font-weight: 600;
   padding: 0.2rem;
-  background: ${({ theme }) => theme.test};
 
   @media ${breakpoints.desktop} {
     font-size: 1rem;
