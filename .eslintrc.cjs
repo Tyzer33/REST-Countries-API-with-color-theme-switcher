@@ -9,10 +9,11 @@ module.exports = {
     'airbnb-typescript',
     'plugin:react/jsx-runtime',
     'prettier',
+    'plugin:styled-components-a11y/recommended',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: { ecmaVersion: 'latest', sourceType: 'module', project: ['./tsconfig.json'] },
-  plugins: ['react-refresh'],
+  plugins: ['react-refresh', 'styled-components-a11y'],
   rules: {
     'react-refresh/only-export-components': 'warn',
   },
