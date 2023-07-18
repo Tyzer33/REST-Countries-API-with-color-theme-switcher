@@ -15,7 +15,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     <ErrorBoundary fallback={<ErrorMessage />}>
       <CustomThemeProvider>
         <GlobalStyle />
-        <BrowserRouter>
+        <BrowserRouter basename="/REST-Countries-API-with-color-theme-switcher">
           <Header />
           <DataProvider>
             <Routes>
